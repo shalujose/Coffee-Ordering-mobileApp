@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="coffee"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/tease" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/imageView"
+        android:ems="10"
+        android:hint="Name"
+        android:textColor="@android:color/white"
+        android:inputType="textCapWords" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/imageView"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="45dp"
+        android:fontFamily="@font/abril_fatface"
+        android:text="Quantity"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Summary"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/abril_fatface"
+        android:layout_below="@id/textView"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="30dp"
+        android:paddingTop="45dp"
+        android:text="2"
+        android:layout_toEndOf="@id/button3"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!--android:background="@android:color/primary_text_light"/> -->
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView2"
+        android:layout_marginTop="73dp"
+        android:background="#4A0404"
+        android:onClick="submitOrder"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="Order"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="178dp"
+        android:layout_height="65dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="200dp"
+        android:background="#CDBEBE"
+        android:text="Click me"
+        android:visibility="invisible"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/textView4"
+        android:layout_marginTop="105dp"
+        android:layout_marginLeft="100dp"
+        android:text="$ 0"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="46dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_toEndOf="@id/textView"
+        android:text="+"
+        android:layout_marginTop="40dp"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="46dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="33dp"
+        android:layout_toEndOf="@id/textView2"
+        android:text="-"
+        android:textSize="22sp"/>
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button"
+        android:layout_marginTop="19dp"
+        android:layout_marginLeft="120dp"
+        android:text="Whipped cream"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/abril_fatface"
+        android:buttonTint="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
+</ScrollView>
