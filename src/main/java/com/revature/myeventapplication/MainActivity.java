@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.NumberFormat;
 
@@ -65,12 +67,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void incrementOrder(){
+        if(noOfCoffee==100){
+            Toast.makeText(this,"You can't make order above 100",Toast.LENGTH_SHORT).show();
+        }
         noOfCoffee=noOfCoffee+1;
         display(noOfCoffee);
     }
 
     public void decrementOrder(){
-        if(noOfCoffee>0)
+        if(noOfCoffee>1)
         noOfCoffee=noOfCoffee-1;
         display(noOfCoffee);
     }
@@ -84,6 +89,15 @@ public class MainActivity extends AppCompatActivity {
         int price = displayPrice(noOfCoffee*5,nametext,hasWhippedCream);
         Log.v("MainActivity","whipped cream checkbox: "+hasWhippedCream);
         orderSummery(nametext,price,hasWhippedCream);
+
+        Intent intent =new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto: "));
+        intent.putExtra(Intent.EXTRA_SUBJECT,"Coffee Ordering "+nametext);
+        intent.putExtra(Intent.EXTRA_TEXT,""+orderSummery(nametext,price,hasWhippedCream));
+        if(intent.resolveActivity(getPackageManager())!=null){
+            startActivity(intent);
+        }
+
     }
 
     private void display(int orderNo) {
