@@ -1,7 +1,12 @@
 # Coffee-Ordering-mobileApp
 A coffee ordering mobile application for customers
 
-## App Contents
+## Prerequisites
+
+  AndroidStudio - IDE
+  Emulator
+
+## App-Contents
   
   Customer can order coffee with topping.
   Order details visible to customer.
